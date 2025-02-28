@@ -1,0 +1,43 @@
+
+public class AbudentNumber2DArray {
+
+	public static void main(String[] args) {
+		
+		int arr[][] = {{1,12,3},
+		           	   {4,5,6},
+		           	   {7,8,9}};
+		
+		int count = 0;
+		for(int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr[i].length;j++) {
+				int abu = abundant(arr[i][j]);
+				if(abu == 1) {
+					count++;
+				}
+			}
+		}
+		if(count%2 == 0) {
+			System.out.println("YES");
+		}
+		else {
+			System.out.println("NO");
+		}
+	}
+	
+	public static int abundant(int n) {
+		
+		int sum = 0;
+		for(int i=1;i<=n/2;i++) {
+			if(n%i==0){
+				sum += i;
+			}
+		}
+		if(sum > n) {
+			return 1;
+		}
+		else{
+			return -1;
+		}
+	}
+
+}
