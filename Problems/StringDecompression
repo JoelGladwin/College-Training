@@ -1,0 +1,40 @@
+
+public class StringDecompression {
+
+	public static void main(String[] args) {
+		
+		String str = "t6hj7ui";
+		
+		String sub = "";
+		
+		for(int i=0;i<str.length();i++) {
+			char ch = str.charAt(i);
+			
+			if(Character.isAlphabetic(ch)) {
+				sub = sub + ch;
+			}
+			else if(Character.isDigit(ch)){
+				
+				int digit = str.charAt(i) - '0';
+				
+				//System.out.println("Digit: "+digit);
+				//System.out.println(sub);
+				
+				for(int k=0;k<digit;k++) {
+					System.out.print(sub);
+				}
+				sub = "";
+			}
+			
+		}
+		
+		//if(Character.isDigit(str.charAt(str.length()-1)) == false) {
+		//	System.out.print(sub);
+		//}
+		
+		if(sub!=null) {
+			System.out.print(sub);
+		}
+	}
+
+}
