@@ -1,0 +1,43 @@
+
+public class ReverseLineofText {
+
+	public static void main(String[] args) {
+		
+		String str = "  I   love   Java  Programming";
+		
+		String sub = "";
+		String rev = "";
+		
+		str = str.trim();
+		
+		StringBuilder s = new StringBuilder();
+		
+		for(int i=str.length()-1;i>=0;i--) {
+			char ch = str.charAt(i);
+			if(Character.isAlphabetic(ch))
+			{
+				sub = sub + ch;
+			}
+			else{
+				//System.out.print(sub);
+				for(int k=sub.length()-1;k>=0;k--) {
+					rev = rev+ sub.charAt(k);
+				}
+				System.out.print(rev);
+				rev = "";
+				sub = "";
+				
+				if(Character.isAlphabetic(str.charAt(i-1))) {
+					System.out.print(" ");
+				}
+				
+			}
+		}
+		if(Character.isWhitespace(str.charAt(str.length()-1)) == false) {
+			System.out.println(sub);
+		}
+	
+		System.out.println(s);
+	}
+
+}
